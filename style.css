@@ -1,0 +1,211 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	/* cursor: none; */
+}
+
+body {
+	background: url("ynstant.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+p {
+	font-size: 1em;
+	text-align: justify;
+	line-height: 2em;
+	padding: 0 2em;
+	margin-bottom: 1em;
+}
+
+header {
+	border-radius: 1em;
+	background-color: rgba(197, 112, 0, 0.5);
+	text-align: center;
+	width: fit-content;
+	padding: 0.5em;
+	margin: 0 auto;
+}
+
+/* Lock section */
+
+/* Width of the elements */
+#lock, #lock_hidden, #lock_text, #glass, #glass_hidden, #glass_text, #usb, #usb_hidden, #usb_text {
+	width: fit-content;
+	position: absolute;
+}
+
+/* z-index of the elements */
+#lock, #lock_hidden, #glass, #glass_hidden, #usb, #usb_hidden {
+	z-index: 0;
+}
+
+/* Position of lock section */
+#lock, #lock_hidden, #lock_text {
+	top: 38%;
+	left: 63%;
+	transform: translate(-50%, -50%);
+}
+
+#lock_text, #usb_text, #glass_text {
+	cursor: default;
+}
+
+.hidden {
+	display: none;
+}
+
+#lock {
+	display: block;
+}
+
+#lock_hidden {
+	z-index: 3;
+	opacity: 0;
+}
+
+#lock_hidden.hidden {
+	display: none;
+}
+
+#lock.hidden {
+	display: none;
+}
+
+#lock_text {
+	z-index: 2;
+	background-color: rgba(255, 0, 0, 0.5);
+	padding: 0.5em;
+	border-radius: 1em;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+#lock_text.visible {
+	opacity: 1;
+}
+
+#lock_text ul {
+	text-align: left;
+	list-style-type: none;
+}
+
+/* Glass section */
+#glass, #glass_hidden {
+	top: 35%;
+	left: 8%;
+	transform: translate(-50%, -50%);
+}
+
+#glass_text {
+	top: 20%;
+	z-index: 2;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 0.5em;
+	border-radius: 1em;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	margin-top: 1em;
+}
+
+#glass_text.visible {
+	opacity: 1;
+}
+
+#glass_text p {
+	/* text-align:left; */
+	text-align: center;
+	line-height: 1.5em;
+}
+
+#glass_hidden {
+	z-index: 3;
+	opacity: 0;
+}
+
+#glass_hidden.hidden {
+	display: none;
+}
+
+#glass.hidden {
+	display: none;
+}
+
+/* USB section */
+#usb, #usb_hidden, #usb_text {
+	top: 75%;
+	left: 20%;
+	transform: translate(-50%, -50%);
+}
+
+#usb_text {
+	z-index: 2;
+	background-color: rgba(208, 255, 0, 0.5);
+	padding: 0.5em;
+	border-radius: 1em;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	margin-top: 1em;
+}
+
+#usb_text ul {
+	text-align: left;
+	/* list-style-type:none; */
+	margin-left: 1em;
+}
+
+#usb_text.visible {
+	opacity: 1;
+}
+
+#usb_hidden {
+	z-index: 3;
+	opacity: 0;
+}
+
+#usb_hidden.hidden {
+	display: none;
+}
+
+#usb.hidden {
+	display: none;
+}
+
+/* Flash light */
+#flashlight {
+	--Xpos: 50vw;
+	--Ypos: 50vh;
+}
+
+#flashlight:before {
+	z-index: 1;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: radial-gradient(
+		circle 8em at var(--Xpos) var(--Ypos),
+		rgba(0, 0, 0, 0),
+		rgb(0, 0, 0)
+	);
+}
+
+#objects_found {
+	position: absolute;
+	color: red;
+	top: 0;
+	left: 0;
+	padding-top: 1em;
+	z-index: 2;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 1em;
+	font-weight: bold;
+}
+
+@media screen and (min-width: 800px) {
+	body {
+		font-size: 24px;
+	}
+}
